@@ -45,7 +45,11 @@ cd dockerfly
 ```
 ### 2️⃣ Configure o arquivo .env
 
-O projeto já possui um .env para o Docker. Você pode ajustar portas e credenciais conforme necessário:
+```bash
+cp .env.example .env
+```
+
+O projeto possui um .env para o Docker. Você pode ajustar portas e credenciais conforme necessário:
 ```bash
 # FrankenPHP
 FRANKENPHP_PORT=80
@@ -66,3 +70,18 @@ REDIS_PORT=6379
 MAILPIT_WEB_PORT=8025
 MAILPIT_SMTP_PORT=1025
 ```
+⚠️ **Atenção**: essas variáveis são usadas pelo `docker-compose.yml`, não confundir com o `.env` do Laravel.
+
+## ▶ Subindo o ambiente
+
+Execute o comando abaixo para construir e subir os containers:
+```bash
+docker compose up -d
+```
+Isso irá:
+- Construir a imagem do FrankenPHP
+- Subir os serviços:
+  - app (Laravel + FrankenPHP)
+  - db (MySQL)
+  - redis (Cache)
+  - mail (Mailpit)
