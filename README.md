@@ -24,3 +24,45 @@ dockerfly/
 ├── .env                  # Variáveis de ambiente do Docker
 └── README.md
 ```
+
+## 🛠 Pré-requisitos
+
+Antes de iniciar, você precisa ter instalado:
+
+- Docker
+- Docker Compose (v2+)
+
+Verifique se está tudo instalado:
+```bash
+docker --version
+docker compose version
+```
+## ⚙️ Configuração inicial
+### 1️⃣ Clone o repositório
+```bash
+git clone https://github.com/brenofpsilva/dockerfly.git
+cd dockerfly
+```
+### 2️⃣ Configure o arquivo .env
+
+O projeto já possui um .env para o Docker. Você pode ajustar portas e credenciais conforme necessário:
+```bash
+# FrankenPHP
+FRANKENPHP_PORT=80
+FRANKENPHP_SSL_PORT=443
+FRANKENPHP_DEV_PORT=5173
+
+# Mysql
+MYSQL_PORT=3306
+MYSQL_ROOT_PASSWORD=root_password
+MYSQL_DATABASE=dockerfly_db
+MYSQL_USER=dockerfly_user
+MYSQL_PASSWORD=dockerfly_password
+
+# Redis
+REDIS_PORT=6379
+
+# Mailpit
+MAILPIT_WEB_PORT=8025
+MAILPIT_SMTP_PORT=1025
+```
