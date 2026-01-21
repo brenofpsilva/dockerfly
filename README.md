@@ -37,6 +37,7 @@ Verifique se está tudo instalado:
 docker --version
 docker compose version
 ```
+
 ## ⚙️ Configuração inicial
 ### 1️⃣ Clone o repositório
 ```bash
@@ -72,6 +73,35 @@ MAILPIT_SMTP_PORT=1025
 ```
 ⚠️ **Atenção**: essas variáveis são usadas pelo `docker-compose.yml`, não confundir com o `.env` do Laravel.
 
+## 📦 Criando o projeto Laravel
+
+**Antes de subir o ambiente, é necessário criar o projeto Laravel dentro da pasta src.**
+
+Criar o projeto usando Docker (Composer)
+```bash
+docker run --rm -v $(pwd):/app composer create-project laravel/laravel src
+```
+## 📌 Por que usar esse comando?
+
+Este comando cria um novo projeto Laravel sem precisar instalar PHP ou Composer localmente, utilizando apenas Docker.
+
+**O que cada parte faz:**
+
+`docker run`
+Executa um container Docker.
+
+`--rm`
+Remove o container automaticamente após a execução (não deixa lixo no sistema).
+
+`-v $(pwd):/app`
+Monta o diretório atual da máquina ($(pwd)) dentro do container no caminho /app.
+
+`composer`
+Usa a imagem oficial do Composer, que já vem com PHP e dependências.
+
+`create-project laravel/laravel src`
+Cria um novo projeto Laravel dentro da pasta src.
+
 ## ▶ Subindo o ambiente
 
 Execute o comando abaixo para construir e subir os containers:
@@ -96,3 +126,8 @@ Isso irá:
 | MySQL |	dockerfly-mysql |	`3306` |
 | Redis |	dockerfly-redis |	`6379` |
 | Mailpit |	dockerfly-mailpit |	`8025` |
+
+
+## Licença
+Este projeto é open source.
+[MIT](https://choosealicense.com/licenses/mit/)
