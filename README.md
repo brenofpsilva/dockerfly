@@ -85,3 +85,14 @@ Isso irá:
   - db (MySQL)
   - redis (Cache)
   - mail (Mailpit)
+
+## 📌 Serviços e portas
+
+| Serviço   | Container       | Porta padrão                           |
+| :---------- | :-------------- | :---------------------------------- |
+| Laravel | dockerfly-frankenphp | `80` |
+| HTTPS | dockerfly-frankenphp | `443` |
+| Vite |	dockerfly-frankenphp |	`5173` |
+| MySQL |	dockerfly-mysql |	`3306` |
+| Redis |	dockerfly-redis |	`6379` |
+| Mailpit |	dockerfly-mailpit |	`8025` |
